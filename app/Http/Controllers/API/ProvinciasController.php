@@ -40,7 +40,7 @@ class ProvinciasController extends Controller
     public function show($id)
     {
         //
-        return Provincias::find($id);
+        return Provincias::where('provincia_id', '=', $id)->get();
     }
 
     /**
@@ -77,5 +77,13 @@ class ProvinciasController extends Controller
         $provincia->delete();
 
         return 204;
+    }
+
+
+    public function provinciaRegion($id)
+    {
+        $provincia = Provincias::where('region_id', '=', $id)->get(); //obtener todas las provincias donde clave foranea
+        //'region_id' sea igual a  mi id $idRegion
+        return response()->json($provincia, 200);
     }
 }

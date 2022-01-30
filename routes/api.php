@@ -24,14 +24,25 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('regiones', [RegionesController::class, 'index']);
-Route::get('regiones/{region_id}', [RegionesController::class, 'show']);
+Route::get('regiones/{id}', [RegionesController::class, 'show']);
 
-// Route::get('regiones', 'RegionesController@index');
-// Route::get('regiones/{region_id}', 'RegionesController@show');
-// Route::post('regiones', 'RegionesController@store');
-// Route::put('regiones/{region_id}', 'RegionesController@update');
-// Route::delete('regiones/{region_id}', 'RegionesController@delete');
 Route::get('provincias', [ProvinciasController::class, 'index']);
+Route::get('provincias/{id}', [ProvinciasController::class, 'show']);
+Route::get('provincias/regiones/{id}', [ProvinciasController::class, 'provinciaRegion']); //cambiar
 
 
 Route::get('ciudades', [CiudadesController::class, 'index']);
+Route::get('ciudades/{id}', [CiudadesController::class, 'index']);
+Route::get('ciudades/provincias/{id}', [CiudadesController::class, 'ciudadProvincia']); //cambiar
+
+
+
+Route::get('calles', [CallesController::class, 'index']);
+Route::get('calles/{id}', [CallesController::class, 'show']);
+Route::post('calles/insert', [CallesController::class, 'store']);
+Route::put('calles/{id}', [CallesController::class, 'update']);
+
+Route::get('callesdatos', [CallesController::class, 'getCalle']); //cambiar 
+Route::get('calles/datos/{idCiudad}', [CallesController::class, 'getCalleParametro']); //cambiar 
+Route::delete('calles/datos/{id}', [CallesController::class, 'delete']); //cambiar 
+// Route::get('calles/datos', 'App\Http\Controllers\CallesController@getCalle'); //cambiar 

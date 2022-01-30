@@ -35,9 +35,10 @@ class RegionesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($region_id)
+    public function show($id)
     {
-        return Regiones::find($region_id);
+        //
+        return Regiones::where('region_id', '=', $id)->get();
     }
 
     /**

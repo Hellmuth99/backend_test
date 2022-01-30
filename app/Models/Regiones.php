@@ -10,13 +10,13 @@ class Regiones extends Model
     use HasFactory;
 
     protected $fillable = [
-        'region_id',
+
         'region_nombre',
 
     ];
 
-    // protected $hidden = [
-    //     'created_at',
-    //     'updated_at',
-    // ];
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
 }

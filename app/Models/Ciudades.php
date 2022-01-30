@@ -13,5 +13,10 @@ class Ciudades extends Model
         'ciudad_nombre',
         'provincia_id',
 
+
+    ];
+    protected $hidden = [
+        'created_at',
+        'updated_at',
     ];
 }

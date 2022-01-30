@@ -39,7 +39,9 @@ class CiudadesController extends Controller
     public function show($id)
     {
         //
+        return Ciudades::where('ciudad_id', '=', $id)->get();
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -62,5 +64,13 @@ class CiudadesController extends Controller
     public function destroy($id)
     {
         //
+
+    }
+
+    public function ciudadProvincia($id)
+    {
+        $ciudad = Ciudades::where('provincia_id', '=', $id)->get(); //obtener todas las provincias donde clave foranea
+        //'region_id' sea igual a  mi id $idRegion
+        return response()->json($ciudad, 200);
     }
 }
