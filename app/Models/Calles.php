@@ -11,7 +11,7 @@ class Calles extends Model
 
     // protected $table = 'calles';
     protected $fillable = [
-        'calle_id',
+        // 'calle_id',
         'calle_nombre',
         'ciudad_id',
 

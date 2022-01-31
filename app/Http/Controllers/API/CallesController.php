@@ -71,10 +71,10 @@ class CallesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $calle = Calles::where('ca_id', '=', $id);
+        $calle = Calles::where('calle_id', '=', $id);
         $calle->update($request->all());
 
-        return $calle;
+        return 201;
     }
 
     /**
