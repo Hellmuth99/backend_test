@@ -54,19 +54,7 @@ class CallesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    //     $calle = Calles::find($id);
-    //     if (!$calle) {
-    //         return response()->json(['mensaje' => 'no se encuentra la calle'], 404);
-    //     }
-    //     $calle->calle_nombre = $request->input('calle_nombre');
-    //     $calle->ciudad_id = $request->input('ciudad_id');
-    //     $calle->save();
 
-    //     return response()->json($calle, 200);
-    // }
 
     public function update(Request $request, $id)
     {

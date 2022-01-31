@@ -28,12 +28,11 @@ Route::get('regiones/{id}', [RegionesController::class, 'show']);
 
 Route::get('provincias', [ProvinciasController::class, 'index']);
 Route::get('provincias/{id}', [ProvinciasController::class, 'show']);
-Route::get('provincias/regiones/{id}', [ProvinciasController::class, 'provinciaRegion']); //cambiar
-
+Route::get('provincias/regiones/{id}', [ProvinciasController::class, 'provinciaRegion']);
 
 Route::get('ciudades', [CiudadesController::class, 'index']);
 Route::get('ciudades/{id}', [CiudadesController::class, 'index']);
-Route::get('ciudades/provincias/{id}', [CiudadesController::class, 'ciudadProvincia']); //cambiar
+Route::get('ciudades/provincias/{id}', [CiudadesController::class, 'ciudadProvincia']);
 
 
 
@@ -42,7 +41,6 @@ Route::get('calles/{id}', [CallesController::class, 'show']);
 Route::post('calles/insert', [CallesController::class, 'store']);
 Route::put('calles/{id}', [CallesController::class, 'update']);
 
-Route::get('callesdatos', [CallesController::class, 'getCalle']); //cambiar 
-Route::get('callesdatos/{id}', [CallesController::class, 'getCalleParametro']); //cambiar 
-Route::delete('calles/datos/{id}', [CallesController::class, 'delete']); //cambiar 
-// Route::get('calles/datos', 'App\Http\Controllers\CallesController@getCalle'); //cambiar 
+Route::get('callesdatos', [CallesController::class, 'getCalle']);
+Route::get('callesdatos/{id}', [CallesController::class, 'getCalleParametro']);
+Route::delete('calles/datos/{id}', [CallesController::class, 'delete']);
