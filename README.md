@@ -52,7 +52,7 @@ DB_PASSWORD=
 #### Luego de todo la API estaría funcionando en el url (definido por el nombre de proyecto y laragon): 
 
 ```
-http://api-test-mundo-pacifico.test
+http://postulacion_back.test
 ```
 
 
