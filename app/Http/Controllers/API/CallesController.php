@@ -110,7 +110,7 @@ class CallesController extends Controller
     }
 
 
-    public function getCalleParametro($idCiudad)
+    public function getCalleParametro($id)
     {
         $datosCalleParametro = Calles::join('ciudades', 'calles.ciudad_id', '=', 'ciudades.ciudad_id')
             ->join('provincias', 'ciudades.provincia_id', '=', 'provincias.provincia_id')
@@ -124,7 +124,7 @@ class CallesController extends Controller
                 'regiones.region_id',
                 'regiones.region_nombre'
             )
-            ->where('calles.calle_id', '=', 'idCiudad')
+            ->where('calles.calle_id', '=', $id)
             ->orderBy('calles.calle_id', 'asc')
             ->get();
         return response()->json($datosCalleParametro, 200);

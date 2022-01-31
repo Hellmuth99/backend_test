@@ -43,6 +43,6 @@ Route::post('calles/insert', [CallesController::class, 'store']);
 Route::put('calles/{id}', [CallesController::class, 'update']);
 
 Route::get('callesdatos', [CallesController::class, 'getCalle']); //cambiar 
-Route::get('calles/datos/{idCiudad}', [CallesController::class, 'getCalleParametro']); //cambiar 
+Route::get('callesdatos/{id}', [CallesController::class, 'getCalleParametro']); //cambiar 
 Route::delete('calles/datos/{id}', [CallesController::class, 'delete']); //cambiar 
 // Route::get('calles/datos', 'App\Http\Controllers\CallesController@getCalle'); //cambiar 
