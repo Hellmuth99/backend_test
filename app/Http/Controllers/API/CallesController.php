@@ -144,12 +144,9 @@ class CallesController extends Controller
             ->join('provincias', 'ciudades.provincia_id', '=', 'provincias.provincia_id')
             ->join('regiones', 'provincias.region_id', '=', 'regiones.region_id')
             ->select(
-                'calles.*',
-                'ciudades.ciudad_id',
+                'calles.calle_nombre',
                 'ciudades.ciudad_nombre',
-                'provincias.provincia_id',
                 'provincias.provincia_nombre',
-                'regiones.region_id',
                 'regiones.region_nombre'
             )
             ->where('calles.calle_nombre', 'like', "%$nombre%")
