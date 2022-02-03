@@ -44,3 +44,6 @@ Route::put('calles/{id}', [CallesController::class, 'update']);
 Route::get('callesdatos', [CallesController::class, 'getCalle']);
 Route::get('callesdatos/{id}', [CallesController::class, 'getCalleParametro']);
 Route::delete('calles/datos/{id}', [CallesController::class, 'delete']);
+
+
+Route::get('callesdatos2/{nombre}', [CallesController::class, 'getCalleParametro2']);

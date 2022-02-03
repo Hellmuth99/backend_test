@@ -137,4 +137,24 @@ class CallesController extends Controller
             ->get();
         return response()->json($datosCalle, 200);
     }
+
+    public function getCalleParametro2($nombre)
+    {
+        $datosCalleParametro = Calles::join('ciudades', 'calles.ciudad_id', '=', 'ciudades.ciudad_id')
+            ->join('provincias', 'ciudades.provincia_id', '=', 'provincias.provincia_id')
+            ->join('regiones', 'provincias.region_id', '=', 'regiones.region_id')
+            ->select(
+                'calles.*',
+                'ciudades.ciudad_id',
+                'ciudades.ciudad_nombre',
+                'provincias.provincia_id',
+                'provincias.provincia_nombre',
+                'regiones.region_id',
+                'regiones.region_nombre'
+            )
+            ->where('calles.calle_nombre', 'like', "%$nombre%")
+            ->orderBy('calles.calle_id', 'asc')
+            ->get();
+        return response()->json($datosCalleParametro, 200);
+    }
 }
